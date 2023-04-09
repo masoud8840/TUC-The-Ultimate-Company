@@ -108,7 +108,7 @@ body {
 
         select {
           width: 230px;
-          height: 60px;
+          height: 56px;
           border: 0;
           background-color: transparent;
           padding: 0 10px;
@@ -139,7 +139,6 @@ body {
     }
   }
   .subhero {
-    padding: 75px 0;
     display: grid;
     grid-template-columns: repeat(1, minmax(180px, 1fr));
     gap: 30px;
@@ -177,7 +176,7 @@ body {
   // Services
   .services {
     background-color: var(--bg-white-1);
-    padding: 100px 0;
+
     .container {
       .services-container {
         display: grid;
@@ -214,13 +213,84 @@ body {
       }
     }
   }
+
+  .latest-projects {
+    .projects-container {
+      .project-item {
+        position: relative;
+        border-radius: var(--rd-sm);
+        display: flex;
+        margin: 0 15px;
+        width: 100%;
+
+        &:first-child {
+          margin: 0 15px 0 0;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        .project-item-overlay {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: 15px;
+          opacity: 0;
+          transition: all 0.65s;
+
+          &:hover {
+            @include GradientBackground(
+              180deg,
+              rgba($color: #fafafa, $alpha: 0),
+              rgba($color: #000, $alpha: 0.7)
+            );
+            opacity: 1;
+
+            .project-item-description {
+              transform: translateY(0);
+            }
+
+            a {
+              transform: translateY(0);
+            }
+          }
+
+          a {
+            transform: translateY(50%);
+            transition: transform 0.45s;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 16px;
+          }
+
+          .project-item-description {
+            display: flex;
+            justify-content: space-between;
+            color: var(--white-2);
+            transform: translateY(50%);
+            transition: transform 0.45s;
+          }
+        }
+
+        @media (min-width: 576px) {
+          & {
+            width: initial;
+          }
+        }
+      }
+    }
+  }
 }
 
 // globals
 a {
   text-decoration: none;
   color: var(--white);
-  padding: 12px 25px;
 }
 
 .section-title {
@@ -258,4 +328,10 @@ a {
     left: 0;
     transform: translateY(-50%);
   }
+}
+
+.subhero,
+.services,
+.latest-projects {
+  padding: 100px 0;
 }

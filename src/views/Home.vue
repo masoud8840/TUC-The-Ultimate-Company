@@ -66,12 +66,47 @@
         </div>
       </div>
     </section>
+
+    <section class="latest-projects">
+      <div class="container">
+        <h2 class="section-title light-2">Latest Projects</h2>
+        <Flicking
+          :options="flickingOptions"
+          class="projects-container"
+          ref="latestProjectsFlicking"
+        >
+          <!-- Don't need to bind :key -->
+          <div
+            class="panel project-item"
+            v-for="(proj, index) in latestProject"
+            :key="index"
+          >
+            <img :src="proj.img" :alt="proj.title" />
+            <div class="project-item-overlay">
+              <a :href="proj.link" class="subsection-title light">{{
+                proj.title
+              }}</a>
+              <div class="project-item-description">
+                <p class="subsection-description light">
+                  {{ proj.projectType }}
+                </p>
+                <span class="subsection-description light">{{
+                  proj.date
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </Flicking>
+      </div>
+    </section>
   </section>
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
 import services from "../externals/services.js";
+import latestProject from "../externals/latestProjects.js";
+
 // Hero
 const projectScale = ref("default");
 const projectType = ref("web");
@@ -121,4 +156,16 @@ onMounted(() => {
   });
   countingObserver.observe(subheroRef.value);
 });
+
+// latest projects
+const flickingOptions = ref({ align: "prev" });
+const latestProjectsFlicking = ref(null);
+
+function onClickNextOnLatestProjectsFlicking() {
+  latestProjectsFlicking.value.next();
+}
+
+function onClickPrevOnLatestProjectsFlicking() {
+  latestProjectsFlicking.value.prev();
+}
 </script>
