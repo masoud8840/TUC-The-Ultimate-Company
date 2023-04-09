@@ -1,0 +1,98 @@
+// MIXINs
+@mixin GradientBackground($deg, $from, $to) {
+  background: linear-gradient($deg, $from, $to);
+}
+
+@mixin GradientText($deg, $from, $to) {
+  background: -webkit-linear-gradient($deg, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// globals
+:root {
+  --white: #fafafa;
+  --white-1: #e2e2e2;
+  --white-2: #d9d9d9;
+  --white-3: #a9a9a9;
+  --white-4: #565656;
+
+  --bg-white-1: #f1f1f1;
+
+  --h1: 600 16px "Poppins";
+  --p-bold: 500 16px "Poppins";
+  --gred-from: #00a3ff;
+  --gred-to: #00c0cc;
+
+  --primary: #8330ff;
+  --secondary: #00e3ab;
+
+  --rd-sm: 4px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 400 14px "Poppins", "sans-serif";
+  line-height: 21px;
+  color: var(--text);
+}
+
+body {
+  background-color: var(--white);
+}
+.container {
+  max-width: 1200px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.section-title {
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 55px;
+  color: var(--text);
+  font: var(--h1);
+  &.light {
+    color: var(--white);
+    &::after {
+      background-color: var(--white);
+    }
+  }
+  &.light-1 {
+    color: var(--white-2);
+    &::after {
+      background-color: var(--white-2);
+    }
+  }
+  &.light-2 {
+    color: var(--white-3);
+    margin-bottom: 25px;
+    &::after {
+      background-color: var(--white-3);
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background: var(--white);
+    top: 51%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+
+// Imports
+@import "Home";
