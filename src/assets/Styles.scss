@@ -14,6 +14,7 @@
   --white-1: #e2e2e2;
   --white-2: #d9d9d9;
   --white-3: #a9a9a9;
+  --white-4: #565656;
 
   --bg-white-1: #f1f1f1;
 
@@ -33,6 +34,7 @@
   box-sizing: border-box;
   font: 400 14px "Poppins", "sans-serif";
   line-height: 21px;
+  color: var(--text);
 }
 
 body {
@@ -277,6 +279,10 @@ body {
             color: var(--white-2);
             transform: translateY(50%);
             transition: transform 0.45s;
+            p,
+            span {
+              font-weight: 300;
+            }
           }
         }
 
@@ -333,6 +339,7 @@ body {
 
           p {
             color: var(--text-white);
+            font-weight: 300;
           }
         }
       }
@@ -464,6 +471,141 @@ body {
             }
           }
         }
+      }
+    }
+  }
+
+  .faqs {
+    background-color: var(--bg-light);
+    padding: 100px 0;
+
+    .faqs-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 30px;
+
+      .faq-item {
+        text-decoration: none;
+        display: grid;
+        gap: 25px;
+        padding: 30px 0;
+        text-align: center;
+        background-color: var(--white);
+        border-radius: var(--rd-sm);
+        max-width: 380px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+
+        img {
+          width: 64px;
+          aspect-ratio: 1 / 1;
+          margin: 0 auto;
+        }
+
+        p {
+          color: var(--white-4);
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+
+    .chat-and-faq-date {
+      margin-top: 30px;
+      display: grid;
+      grid-template-areas:
+        "faqChat"
+        "faqDate";
+      gap: 30px;
+    }
+
+    .faq-chat,
+    .last-faq-date > div {
+      background-color: var(--white);
+      border-radius: var(--rd-sm);
+      padding: 30px 23.5px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .faq-chat {
+      display: flex;
+      flex-direction: column;
+      grid-area: faqChat;
+
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        color: var(--text);
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--white-3);
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--white);
+        @include GradientBackground(
+          120deg,
+          rgba($color: #8330ff, $alpha: 0.7),
+          rgba($color: #00e3ab, $alpha: 0.7)
+        );
+        padding: 10px 30px;
+        display: block;
+        border-radius: 100px;
+        margin: 15px 0 0 0;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 480px) {
+      .last-faq-date {
+        display: flex !important;
+      }
+    }
+    @media (min-width: 680px) {
+      .faq-chat {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        a {
+          margin: 0;
+        }
+      }
+    }
+    @media (min-width: 1024px) {
+      .chat-and-faq-date {
+        grid-template-areas: "faqChat faqChat faqChat faqDate";
+      }
+    }
+
+    .last-faq-date {
+      display: grid;
+      gap: 30px;
+      grid-area: faqDate;
+
+      div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      h4 {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--white-3);
       }
     }
   }

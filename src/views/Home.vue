@@ -162,6 +162,47 @@
         </div>
       </div>
     </section>
+
+    <section class="faqs">
+      <div class="container">
+        <h2 class="section-title light">FAQs</h2>
+        <div class="faqs-container">
+          <router-link
+            :to="{ name: 'Home', query: { category: faq.title } }"
+            class="faq-item"
+            v-for="faq in faqs"
+            :key="faq"
+          >
+            <img :src="faq.img" :alt="faq.title" />
+            <p>{{ faq.title }}</p>
+          </router-link>
+        </div>
+
+        <div class="chat-and-faq-date">
+          <div class="faq-chat">
+            <div>
+              <h3>Still have questions?</h3>
+              <p>
+                Can’t find the answer you’re looking for? Please chat to our
+                team.
+              </p>
+            </div>
+            <router-link to="/"> Let's Chat </router-link>
+          </div>
+
+          <div class="last-faq-date">
+            <div class="last-question">
+              <h4>Last Question</h4>
+              <p>11.05.23 10:25</p>
+            </div>
+            <div class="last-answer">
+              <h4>Last Answer</h4>
+              <p>12.05.23 10:25</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 </template>
 
@@ -171,6 +212,7 @@ import services from "../externals/services.js";
 import latestProject from "../externals/latestProjects.js";
 import ourTeam from "../externals/ourTeam.js";
 import clientsFeedback from "../externals/clientFeedbacks.js";
+import faqs from "../externals/FAQs.js";
 
 // Hero
 const projectScale = ref("default");
