@@ -265,7 +265,11 @@ onMounted(() => {
 });
 
 // latest projects
-const flickingOptions = ref({ align: "prev" });
+const flickingOptions = ref({
+  align: "prev",
+  circularFallback: "bound",
+  circular: true,
+});
 const latestProjectsFlicking = ref(null);
 
 function onClickNextOnLatestProjectsFlicking() {
