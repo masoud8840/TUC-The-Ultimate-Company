@@ -99,6 +99,25 @@
         </Flicking>
       </div>
     </section>
+
+    <section class="our-team">
+      <div class="container">
+        <h2 class="section-title light-2">Our Team</h2>
+        <div class="our-team-container">
+          <router-link
+            :to="{ name: 'Home' }"
+            class="team-member"
+            v-for="member in ourTeam"
+          >
+            <img :src="member.img" :alt="member.name" />
+            <div class="team-member-overlay">
+              <h3>{{ member.name }}</h3>
+              <p v-for="skill in member.skills">{{ skill }}</p>
+            </div>
+          </router-link>
+        </div>
+      </div>
+    </section>
   </section>
 </template>
 
@@ -106,6 +125,7 @@
 import { onMounted, ref } from "vue";
 import services from "../externals/services.js";
 import latestProject from "../externals/latestProjects.js";
+import ourTeam from "../externals/ourTeam.js";
 
 // Hero
 const projectScale = ref("default");

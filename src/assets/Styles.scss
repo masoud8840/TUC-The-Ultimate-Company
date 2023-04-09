@@ -285,6 +285,56 @@ body {
       }
     }
   }
+
+  .our-team {
+    background-color: var(--bg-white-1);
+    .our-team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+
+      .team-member {
+        text-align: center;
+        position: relative;
+        border-radius: 500px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+
+        .team-member-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba($color: #000, $alpha: 0.5);
+          opacity: 0;
+          transition: opacity 0.25s;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 27px;
+          }
+
+          p {
+            color: var(--text-white);
+          }
+        }
+      }
+    }
+  }
 }
 
 // globals
@@ -332,6 +382,7 @@ a {
 
 .subhero,
 .services,
-.latest-projects {
+.latest-projects,
+.our-team {
   padding: 100px 0;
 }
