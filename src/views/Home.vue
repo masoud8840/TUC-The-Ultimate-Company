@@ -31,15 +31,93 @@
             <router-link to="/">Let's Talk</router-link>
           </div>
         </div>
-        <img src="/images/HomeView/TeamWork.png" alt="teamwork" class="intoruction-img" />
+        <img
+          src="/images/HomeView/TeamWork.png"
+          alt="teamwork"
+          class="intoruction-img"
+        />
         <span class="scroll-notation">Scroll Down</span>
       </div>
+    </section>
+
+    <section class="subhero container" ref="subheroRef">
+      <div
+        class="subhero-item"
+        v-for="(item, index) in subheroItems"
+        :key="item"
+      >
+        <h3>{{ item }}</h3>
+        <p>{{ subheroTexts[index] }}</p>
+      </div>
+      <!-- <div class="subhero-item">
+        <h3>{{ youtubeSubsValue }}</h3>
+        <p>Youtube Subscribers</p>
+      </div>
+      <div class="subhero-item">
+        <h3>{{ happyClientsValue }}</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="subhero-item">
+        <h3>{{ teamMembersValue }}</h3>
+        <p>Team Memebers</p>
+      </div>
+      <div class="subhero-item">
+        <h3>{{ jobsDoneSuccessfullyValue }}</h3>
+        <p>Jobs Done Successfully</p>
+      </div> -->
     </section>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+// Hero
 const projectScale = ref("default");
 const projectType = ref("web");
+
+// Subhero
+const trustedByPeopleValue = ref(0);
+const youtubeSubsValue = ref(0);
+const happyClientsValue = ref(0);
+const teamMembersValue = ref(0);
+const jobsDoneSuccessfullyValue = ref(0);
+const somethingInSubheroValue = ref(0);
+const subheroItems = ref([
+  trustedByPeopleValue,
+  youtubeSubsValue,
+  happyClientsValue,
+  teamMembersValue,
+  jobsDoneSuccessfullyValue,
+  somethingInSubheroValue,
+]);
+const subheroTexts = ref([
+  "Trusted by People",
+  "Youtube Subscribers",
+  "Happy Clients",
+  "Team Members",
+  "Jobs Done Successfuly",
+  "Something in Subhero",
+]);
+const targetValues = [480, 185, 222, 5, 35, 92];
+const subheroRef = ref(null);
+onMounted(() => {
+  let counted = false;
+
+  const countingObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0 && !counted) {
+        subheroItems.value.map((item, index) => {
+          let interval = setInterval(() => {
+            item.value++;
+            if (item.value == targetValues[index]) {
+              clearInterval(interval);
+            }
+          }, 5000 / targetValues[index]);
+        });
+        counted = true;
+      }
+    });
+  });
+  countingObserver.observe(subheroRef.value);
+});
 </script>

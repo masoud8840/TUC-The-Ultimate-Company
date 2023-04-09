@@ -13,6 +13,7 @@
   --white: #fafafa;
   --white-1: #e2e2e2;
   --white-2: #d9d9d9;
+  --white-3: #a9a9a9;
 
   --h1: 600 16px "Poppins";
   --p-bold: 500 16px "Poppins";
@@ -30,107 +31,142 @@
 body {
   background-color: var(--white);
 }
-
 .container {
   max-width: 1200px;
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px !important;
+  padding: 0 15px;
   @media (min-width: 1200px) {
-    padding: 0 !important;
+    padding: 0;
   }
 }
+.home-view {
+  .hero {
+    background: transparent url("/images/HomeView/HeaderBackground.png")
+      center/cover no-repeat;
+    .container {
+      padding: 50px 0;
+      min-height: 101vh;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      @media (min-width: 1024px) {
+        flex-direction: row;
+      }
+      h2 {
+        font: var(--h1);
+      }
 
-.hero {
-  background: transparent url("/images/HomeView/HeaderBackground.png")
-    center/cover no-repeat;
-  .container {
-    padding: 50px 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column-reverse;
+      .company-introduction {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 25px;
+        p {
+          color: var(--white-2);
+          font: var(--p-bold);
+        }
+        span {
+          font: var(--p-bold);
+          color: var(--white);
+        }
+        a {
+          background-color: rgba($color: #fafafa, $alpha: 0.2);
+          border-radius: 100px;
+          box-shadow: 0 5px 7px 1px rgb(0, 0, 0, 0.08);
+          padding: 12px 50px;
+        }
+      }
+      .init-project-dropdown {
+        background-color: var(--white);
+        border-radius: 100px;
+        padding-left: 30px;
+        display: none;
+        @media (min-width: 810px) {
+          display: flex;
+        }
+
+        a {
+          @include GradientBackground(120deg, var(--gred-from), var(--gred-to));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: none;
+          font: var(--h1);
+          margin-left: 15px;
+          letter-spacing: 1px;
+          width: 100%;
+          max-width: 200px;
+        }
+
+        select {
+          width: 230px;
+          height: 60px;
+          border: 0;
+          background-color: transparent;
+          padding: 0 10px;
+          outline: 0;
+        }
+      }
+      .scroll-notation {
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+        rotate: -90deg;
+        color: var(--white-2);
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          right: 0;
+          height: 2px;
+          width: 100%;
+          background-color: var(--white-2);
+        }
+      }
+      .intoruction-img {
+        width: 100%;
+        max-width: 480px;
+        min-width: 120px;
+      }
+    }
+  }
+  .subhero {
+    padding: 75px 0;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(180px, 1fr));
+    gap: 30px;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    @media (min-width: 1024px) {
-      flex-direction: row;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
     }
-    h2 {
-      font: var(--h1);
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+    }
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(6, minmax(180px, 1fr));
     }
 
-    .company-introduction {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      gap: 25px;
+    .subhero-item {
+      display: grid;
+      text-align: center;
+
+      h3 {
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--text);
+        line-height: 33px;
+      }
+
       p {
-        color: var(--white-2);
-        font: var(--p-bold);
+        color: var(--white-3);
+        font-weight: 400;
       }
-      span {
-        font: var(--p-bold);
-        color: var(--white);
-      }
-      a {
-        background-color: rgba($color: #fafafa, $alpha: 0.2);
-        border-radius: 100px;
-        box-shadow: 0 5px 7px 1px rgb(0, 0, 0, 0.08);
-        padding: 12px 50px;
-      }
-    }
-    .init-project-dropdown {
-      background-color: var(--white);
-      border-radius: 100px;
-      padding-left: 30px;
-      display: none;
-      @media (min-width: 810px) {
-        display: flex;
-      }
-
-      a {
-        @include GradientBackground(120deg, var(--gred-from), var(--gred-to));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: none;
-        font: var(--h1);
-        margin-left: 15px;
-        letter-spacing: 1px;
-        width: 100%;
-        max-width: 200px;
-      }
-
-      select {
-        width: 230px;
-        height: 60px;
-        border: 0;
-        background-color: transparent;
-        padding: 0 10px;
-        outline: 0;
-      }
-    }
-    .scroll-notation {
-      position: absolute;
-      bottom: 50px;
-      right: 0;
-      rotate: -90deg;
-      color: var(--white-2);
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        right: 0;
-        height: 2px;
-        width: 100%;
-        background-color: var(--white-2);
-      }
-    }
-    .intoruction-img {
-      width: 100%;
-      max-width: 480px;
-      min-width: 120px;
     }
   }
 }
@@ -143,7 +179,6 @@ a {
 }
 
 .section-title {
-  font: var(--section-title);
   letter-spacing: 1px;
   position: relative;
   padding-left: 55px;
