@@ -118,6 +118,50 @@
         </div>
       </div>
     </section>
+
+    <section class="clients-feedback">
+      <div class="clients-feedback-overlay">
+        <div class="container">
+          <h2 class="section-title light">Client's Feedback</h2>
+          <Flicking :options="flickingOptions" class="comments-container">
+            <div
+              class="panel comment-item"
+              v-for="feedback in clientsFeedback"
+              :key="feedback"
+            >
+              <div class="comment-header">
+                <img :src="feedback.userProfile" alt="user" />
+                <div class="comment-title">
+                  <div class="comment-author">
+                    <h4>{{ feedback.name }}</h4>
+                    <span class="dot"></span>
+                    <p class="subsection-description">
+                      {{ feedback.date }} days ago
+                    </p>
+                  </div>
+                  <div class="comment-stars">
+                    <img
+                      v-for="star in feedback.ratingStar"
+                      src="/images/HomeView/ClientsFeedback/Star.png"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+              </div>
+              <p class="comment-text subsection-description">
+                {{ feedback.text }}
+              </p>
+              <div :class="`badge badge-${feedback.badgeClass}`">
+                <span>{{ feedback.badgeText || feedback.badgeClass }}</span>
+              </div>
+              <div class="rating">
+                <span>{{ feedback.rating.toFixed(1) }}</span>
+              </div>
+            </div>
+          </Flicking>
+        </div>
+      </div>
+    </section>
   </section>
 </template>
 
@@ -126,6 +170,7 @@ import { onMounted, ref } from "vue";
 import services from "../externals/services.js";
 import latestProject from "../externals/latestProjects.js";
 import ourTeam from "../externals/ourTeam.js";
+import clientsFeedback from "../externals/clientFeedbacks.js";
 
 // Hero
 const projectScale = ref("default");
