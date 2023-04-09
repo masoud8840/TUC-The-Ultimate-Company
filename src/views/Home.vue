@@ -165,7 +165,7 @@
 
     <section class="faqs">
       <div class="container">
-        <h2 class="section-title light">FAQs</h2>
+        <h2 class="section-title light-2">FAQs</h2>
         <div class="faqs-container">
           <router-link
             :to="{ name: 'Home', query: { category: faq.title } }"

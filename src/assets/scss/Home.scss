@@ -4,7 +4,7 @@
       center/cover no-repeat;
     .container {
       padding: 50px 15px;
-      min-height: 101vh;
+      min-height: 72vh;
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
@@ -24,14 +24,10 @@
         gap: 30px;
         p,
         span {
-          color: var(--white-2);
+          color: var(--bg-white-1);
           font-size: 18px;
           line-height: 27px;
           font-weight: 500;
-        }
-        span {
-          // font: var(--p-bold);
-          color: var(--white);
         }
         a {
           background-color: rgba($color: #fafafa, $alpha: 0.2);
@@ -427,7 +423,7 @@
   }
 
   .faqs {
-    background-color: var(--bg-light);
+    background-color: var(--bg-white-1);
     padding: 100px 0;
 
     .faqs-container {
