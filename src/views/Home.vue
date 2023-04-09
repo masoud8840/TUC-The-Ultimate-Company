@@ -49,28 +49,29 @@
         <h3>{{ item }}</h3>
         <p>{{ subheroTexts[index] }}</p>
       </div>
-      <!-- <div class="subhero-item">
-        <h3>{{ youtubeSubsValue }}</h3>
-        <p>Youtube Subscribers</p>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title light-2">Services</h2>
+        <div class="services-container">
+          <!-- Don't need the key attribute-->
+          <div class="service-item" v-for="service in services">
+            <img :src="service.img" :alt="services.title" />
+            <h3 class="subsection-title">{{ service.title }}</h3>
+            <p class="subsection-description">
+              {{ service.description }}
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="subhero-item">
-        <h3>{{ happyClientsValue }}</h3>
-        <p>Happy Clients</p>
-      </div>
-      <div class="subhero-item">
-        <h3>{{ teamMembersValue }}</h3>
-        <p>Team Memebers</p>
-      </div>
-      <div class="subhero-item">
-        <h3>{{ jobsDoneSuccessfullyValue }}</h3>
-        <p>Jobs Done Successfully</p>
-      </div> -->
     </section>
   </section>
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
+import services from "../externals/services.js";
 // Hero
 const projectScale = ref("default");
 const projectType = ref("web");
