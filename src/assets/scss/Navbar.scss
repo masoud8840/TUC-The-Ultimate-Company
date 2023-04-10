@@ -1,0 +1,102 @@
+:root {
+  --brand-mobile: 600 18px "Poppins";
+  --brand-desktop: 600 28px "Poppins";
+}
+
+header {
+  padding: 25px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.25s;
+
+  &.stick-on-top {
+    background: transparent
+      url("/public/images/NavigationMenu/HeaderBackground.svg") center/cover
+      no-repeat;
+    padding: 15px 0;
+  }
+  nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar-toggler {
+      display: flex;
+      background: transparent;
+      cursor: pointer;
+      border: 0;
+    }
+    .brand {
+      font: var(--brand-mobile);
+      letter-spacing: 1px;
+      line-height: 36px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    ul {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 15px);
+      min-width: 220px;
+      padding: 15px 5px;
+      border-radius: 0 0 7px 7px;
+      background-color: rgba($color: #fafafa, $alpha: 0.8);
+      backdrop-filter: blur(10px);
+      li {
+        list-style-type: none;
+        display: flex;
+        padding: 10px 0;
+
+        a {
+          color: var(--text);
+          text-decoration: none;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          transition: all 0.2s;
+          font: var(--text-md);
+
+          &:hover {
+            padding-left: 10px;
+
+            .navbar-link-arrow-right {
+              opacity: 100%;
+            }
+          }
+
+          .navbar-link-arrow-right {
+            opacity: 0;
+            transition: all 0.2s;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  header {
+    padding: 25px 0;
+  }
+  ul {
+    position: static !important;
+    display: flex;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+
+    a {
+      color: var(--white) !important;
+
+      svg path {
+        fill: var(--white) !important;
+      }
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .brand {
+    font: var(--brand-desktop) !important;
+  }
+}

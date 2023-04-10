@@ -28,6 +28,8 @@
   --secondary: #00e3ab;
 
   --rd-sm: 4px;
+
+  --text: #333333;
 }
 * {
   margin: 0;
@@ -96,3 +98,5 @@ a {
 
 // Imports
 @import "Home";
+@import "Navbar";
+
