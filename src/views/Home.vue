@@ -9,7 +9,7 @@
             you to <span>Build</span> your project in bigger <span>Scale</span>
           </p>
           <!-- TODO: check link to abouts page -->
-          <router-link :to="{ name: 'Home' }">More About Us</router-link>
+          <router-link :to="{ name: 'AboutUs' }">More About Us</router-link>
           <div class="init-project-dropdown">
             <select name="company-scale" v-model="projectScale">
               <option value="default">Select an Option</option>
@@ -208,11 +208,11 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import services from "../externals/services.js";
-import latestProject from "../externals/latestProjects.js";
-import ourTeam from "../externals/ourTeam.js";
-import clientsFeedback from "../externals/clientFeedbacks.js";
-import faqs from "../externals/FAQs.js";
+import services from "../externals/HomeView/services";
+import latestProject from "../externals/HomeView/latestProjects.js";
+import ourTeam from "../externals/HomeView/ourTeam.js";
+import clientsFeedback from "../externals/HomeView/clientFeedbacks.js";
+import faqs from "../externals/HomeView/FAQs.js";
 
 // Hero
 const projectScale = ref("default");

@@ -18,7 +18,7 @@
           </router-link>
         </li>
         <li class="navbar-item">
-          <router-link :to="{ name: 'Home' }">
+          <router-link :to="{ name: 'AboutUs' }">
             <ArrowRight class="navbar-link-arrow-right" />
             <UserAccount />
           </router-link>
