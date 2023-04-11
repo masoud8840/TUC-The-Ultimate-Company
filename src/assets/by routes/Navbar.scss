@@ -11,9 +11,8 @@ header {
   transition: all 0.25s;
 
   &.stick-on-top {
-    background: transparent
-      url("/images/NavigationMenu/HeaderBackground.svg") center/cover
-      no-repeat;
+    background: transparent url("/images/NavigationMenu/HeaderBackground.svg")
+      center/cover no-repeat;
     padding: 15px 0;
   }
   nav {
