@@ -24,9 +24,4 @@ const stickOnTop = ref(false);
 function checkWindowScroll() {
   stickOnTop.value = window.scrollY > 20 && route.name === "Home";
 }
-// watch(route, (newVal) => {
-//   if (newVal.name !== "Home") {
-//     stickOnTop.value = false;
-//   }
-// });
 </script>
