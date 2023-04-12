@@ -170,9 +170,38 @@ a {
   }
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: var(--rd-rounded);
+  pointer-events: none;
+  appearance: none;
+
+  &:checked {
+    @include GradientBackground(
+      120deg,
+      rgba($color: #8330ff, $alpha: 0.7),
+      rgba($color: #00e3ab, $alpha: 0.7)
+    );
+    border: 0;
+
+    &:after {
+      content: url("/images/ContactsView/Form/Check.svg");
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
 // Imports
 @import "./by\ routes/Home";
 @import "./by\ routes/Navbar";
 @import "./by\ routes/AboutUs";
 @import "./by\ routes/ContactUs";
 @import "./by\ routes/FAQs";
+@import "./by\ routes/Careers";

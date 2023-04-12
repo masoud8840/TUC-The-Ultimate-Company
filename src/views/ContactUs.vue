@@ -47,7 +47,7 @@
       <div class="contacts-form">
         <h3 class="contacts-form-title">Level Up Your Brand</h3>
         <!--    Transition Group is placed here    -->
-        <transition-group name="form-slider" mode="in-out">
+        <transition-group name="form-slider">
           <div
             class="contacts-form-page-1"
             v-if="currentFormIndex === 0"
@@ -79,10 +79,6 @@
             </div>
           </div>
 
-          <section>
-            <input type="file" @input="imageUploaded" ref="fileInput" />
-            <button @click="fetchData">Call API</button>
-          </section>
           <form
             class="contacts-form-page-2"
             :key="2"

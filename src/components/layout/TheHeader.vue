@@ -15,7 +15,7 @@
 
       <ul class="navbar" v-if="!isOnMobileDevice || isNavbarOpen">
         <li class="navbar-item" v-for="item in menuItems">
-          <router-link :to="{ name: 'FAQs' }">
+          <router-link :to="{ name: 'Careers' }">
             <ArrowRight class="navbar-link-arrow-right" />
             {{ item.title }}
           </router-link>
