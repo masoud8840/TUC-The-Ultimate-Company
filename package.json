@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@egjs/vue3-flicking": "^4.10.6",
+    "firebase": "^9.19.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

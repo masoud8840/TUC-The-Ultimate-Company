@@ -18,13 +18,13 @@
           </button>
         </div>
         <span>OR</span>
-        <form class="login-form" @submit.prevent="Login">
+        <form class="login-form" @submit.prevent="handleLogin">
           <div class="input-group">
             <input
               type="email"
               id="login-email"
               placeholder="Email"
-              v-model="email"
+              v-model="user.email"
             />
             <img src="/images/AccountView/Email.svg" alt="email-icon" />
           </div>
@@ -33,7 +33,7 @@
               type="password"
               id="login-password"
               placeholder="Password"
-              v-model="password"
+              v-model="user.password"
             />
             <img src="/images/AccountView/Password.svg" alt="password-icon" />
           </div>
@@ -44,9 +44,7 @@
             <router-link to="/reset">I forgot my password</router-link>
           </div>
 
-          <p class="login-log-msg" v-if="err">
-            {{ err }}
-          </p>
+          <p class="login-log-msg" v-if="error">{{ error }}</p>
 
           <div class="input-group submit-btns">
             <router-link :to="{ name: 'Signup' }">SIGN UP</router-link>
@@ -67,5 +65,19 @@
 </template>
 
 <script setup>
+import { reactive } from "vue";
+import getLogin from "../composables/useLogin.js";
+import { useRouter } from "vue-router";
 
+const user = reactive({
+  email: "",
+  password: "",
+});
+
+const router = useRouter();
+const { useLogin, error } = getLogin();
+const handleLogin = async () => {
+  await useLogin(user.email, user.password);
+  if (error.value === null) router.replace("/");
+};
 </script>
