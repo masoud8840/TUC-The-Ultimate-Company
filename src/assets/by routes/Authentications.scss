@@ -1,0 +1,336 @@
+.login-view,
+.signup-view {
+  min-height: 100vh;
+  background-color: var(--bg-white-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-view-inner,
+  .signup-view-inner {
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: var(--white);
+    display: flex;
+
+    .login-inner,
+    .signup-inner {
+      width: 218%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 75px 0 50px;
+
+      h3 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 48px;
+        @include GradientText(120deg, var(--primary), var(--secondary));
+      }
+
+      .login-with-social,
+      .signup-with-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      span {
+        color: var(--white-4);
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 15px;
+        margin: 20px 0;
+        position: relative;
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: #e2e2e2;
+          width: 190px;
+          height: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 30px;
+        }
+
+        &::before {
+          left: 30px;
+        }
+      }
+
+      .login-form,
+      .signup-form {
+        width: 100%;
+        max-width: 425px;
+        display: grid;
+        gap: 15px;
+
+        .input-group {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+
+          &.double-input-group {
+            gap: 15px;
+          }
+
+          &:has(#remember-me) {
+            padding-left: 20px;
+          }
+
+          input:not([type="checkbox"]) {
+            width: 100%;
+            padding: 0 15px 0 54px;
+            height: 40px;
+            @include GradientBackground(
+              120deg,
+              rgba($color: #8330ff, $alpha: 0.07),
+              rgba($color: #00e3ab, $alpha: 0.07)
+            );
+            border: 0;
+            border-radius: var(--rd-sm);
+            font-size: 14px;
+            line-height: 21px;
+            color: var(--text);
+            outline: none;
+
+            &::placeholder {
+              color: var(--white-4);
+              transition: padding 0.15s;
+            }
+
+            &:focus {
+              box-shadow: inset 0 0 5px rgba(169, 169, 169, 0.7);
+
+              &::placeholder {
+                padding-left: 10px;
+              }
+            }
+          }
+
+          img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+          }
+
+          input[type="checkbox"] {
+            pointer-events: all;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: var(--rd-sm);
+
+            &:checked {
+              @include GradientBackground(
+                120deg,
+                rgba($color: #8330ff, $alpha: 0.7),
+                rgba($color: #00e3ab, $alpha: 0.7)
+              );
+            }
+          }
+
+          label,
+          a {
+            font-size: 12px;
+            line-height: 18px;
+            color: var(--text);
+          }
+
+          a {
+            margin-left: auto;
+            color: var(--lightText);
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          label {
+            padding-left: 10px;
+          }
+        }
+
+        .submit-btns {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          width: fit-content;
+          margin: 0 auto;
+
+          a {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            color: var(--text);
+          }
+
+          @media (min-width: 768px) {
+            a {
+              display: none;
+            }
+          }
+        }
+
+        button {
+          @include GradientBackground(
+            120deg,
+            rgba($color: #8330ff, $alpha: 0.7),
+            rgba($color: #00e3ab, $alpha: 0.7)
+          );
+          padding: 10px 50px;
+          font-weight: 500;
+          margin: 10px 0;
+          border-radius: 25px;
+          border: 0;
+          cursor: pointer;
+          color: var(--white);
+        }
+
+        .signup-log-msg,
+        .signin-log-msg {
+          @include GradientText(120deg, #eaafc8, #faaca8);
+          font-weight: 500;
+        }
+
+        .login-log-msg {
+          @include GradientText(120deg, #8330ff, #00e3ab);
+        }
+      }
+
+      .login-with-social {
+        button {
+          display: flex;
+          cursor: pointer;
+          border: 0;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .login-banner,
+    .signup-banner {
+      width: 100%;
+      max-width: 400px;
+      @include GradientBackground(
+        120deg,
+        rgba($color: #8330ff, $alpha: 0.7),
+        rgba($color: #00e3ab, $alpha: 0.7)
+      );
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 100px 50px;
+      gap: 20px;
+      position: relative;
+      @media (max-width: 768px) {
+        display: none;
+      }
+      // Square
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: rgba($color: #fafafa, $alpha: 0.12);
+        top: 10%;
+        right: 10%;
+        rotate: 45deg;
+        border-radius: 2px;
+      }
+
+      &::before {
+        top: 75%;
+        height: 45px;
+        right: 80%;
+        rotate: -45deg;
+      }
+
+      .circle {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        bottom: -37%;
+        right: -37%;
+        background-color: rgba($color: #fafafa, $alpha: 0.12);
+        border-radius: 100%;
+      }
+
+      h3 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 48px;
+        color: var(--white);
+      }
+      
+      p {
+        line-height: 24px;
+        color: var(--white);
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 22.5px;
+        background-color: transparent;
+        border: 1px solid var(--white);
+        text-transform: uppercase;
+        color: var(--white);
+        padding: 10px 60px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#signup {
+  .signup-inner h3 {
+    @include GradientText(120deg, #eaafc8, #faaca8);
+  }
+
+  .signup-form {
+    input:not([type="checkbox"]) {
+      @include GradientBackground(
+        120deg,
+        rgba($color: #eaafc8, $alpha: 0.07),
+        rgba($color: #faaca8, $alpha: 0.07)
+      );
+    }
+
+    button {
+      @include GradientBackground(120deg, #eaafc8, #faaca8);
+    }
+  }
+
+  .signup-banner {
+    @include GradientBackground(
+      120deg,
+      rgba($color: #eaafc8, $alpha: 0.7),
+      rgba($color: #faaca8, $alpha: 0.7)
+    );
+
+    &::after {
+      left: 10%;
+    }
+
+    &::before {
+      left: 80%;
+    }
+
+    .circle {
+      left: -37%;
+    }
+  }
+}
