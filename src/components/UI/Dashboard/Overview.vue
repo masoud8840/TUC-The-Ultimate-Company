@@ -1,5 +1,5 @@
 <template>
-  <section class="dashboard-overview-container">
+  <section class="dashboard-view-inner dashboard-overview-container">
     <div class="dashboard-section-title">
       <h2 class="dashboard-title">Good Morning, !</h2>
       <p class="dashbaord-subtitle">Monday, 20 October 2021</p>

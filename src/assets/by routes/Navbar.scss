@@ -1,6 +1,5 @@
 :root {
   --brand-mobile: 600 18px "Poppins";
-  --brand-desktop: 600 26px "Poppins";
 }
 
 header {
@@ -79,19 +78,16 @@ header {
   header {
     padding: 25px 0;
   }
-  ul {
+  .navigation ul {
     position: static !important;
     background-color: transparent !important;
     backdrop-filter: none !important;
-
+    display: flex;
     a {
+      color: var(--white);
       svg path {
+        fill: var(--white);
       }
     }
-  }
-}
-@media (min-width: 1280px) {
-  .brand {
-    font: var(--brand-desktop) !important;
   }
 }

@@ -41,15 +41,17 @@
       span,
       p {
         color: var(--text);
+        
       }
-
+      
       p {
         font-weight: 500;
       }
-
+      
       span {
         font-size: 14px;
         line-height: 21px;
+        color: var(--white-3);
       }
 
       &.active {

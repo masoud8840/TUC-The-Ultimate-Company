@@ -92,7 +92,7 @@
   }
 }
 .dashboard-view-inner {
-  padding: 30px 10px 0 0;
+  padding-top: 30px;
   color: var(--text);
 }
 h2.dashboard-title {
@@ -361,6 +361,171 @@ h2.dashboard-title {
           }
         }
       }
+    }
+  }
+}
+
+.dashboard-projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &.dashboard-projects-view {
+    background-color: red;
+    gap: 0;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px 0;
+    h4 {
+      margin-top: 10px;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+    p {
+      font-weight: 400;
+      color: var(--white-3);
+    }
+  }
+  .dashboard-project-item {
+    border: 1px solid #e2e2e2;
+    border-radius: var(--rd-sm);
+    display: grid;
+    gap: 15px;
+
+    .dashboard-project-item-description {
+      color: var(--white-3);
+      font-size: 14px;
+      line-height: 21px;
+      padding: 10px 0;
+    }
+    .dashboard-project-item-footer {
+      p,
+      span {
+        font-size: 14px;
+        line-height: 21px;
+      }
+      p {
+        color: var(--white-3);
+      }
+      span {
+        font-weight: 500;
+        color: var(--text);
+      }
+    }
+  }
+  &.GridView {
+    .dashboard-project-item-description {
+      padding: 0 15px 15px 15px;
+    }
+    .dashboard-project-item-footer {
+      border-top: 1px solid #e2e2e2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center;
+      div {
+        padding: 15px 0;
+      }
+      .dashboard-project-item-startdate {
+        border-right: 1px solid #e2e2e2;
+      }
+    }
+    @media (min-width: 960px) {
+      grid-template-columns: repeat(2, minmax(277px, 1fr));
+    }
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(3, minmax(277px, 1fr));
+    }
+  }
+  &.ListView {
+    grid-template-columns: repeat(1, 1fr);
+    .dashboard-project-item {
+      grid-template-columns: 1fr 7fr 1fr;
+
+      .dashboard-project-item-footer {
+        border-left: 1px solid #e2e2e2;
+        display: grid;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          height: 100%;
+          padding: 15px;
+        }
+        .dashboard-project-item-startdate {
+          border-bottom: 1px solid #e2e2e2;
+        }
+      }
+    }
+  }
+
+  .input-group-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // margin-bottom: 30px;
+    input {
+      height: 45px;
+      border-radius: var(--rd-sm);
+    }
+    .projects-list-style {
+      display: flex;
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        padding: 3px 7px;
+        cursor: pointer;
+        &:first-child {
+          border-radius: 4px 0 0 4px;
+          @include GradientBackground(
+            120deg,
+            rgba($color: #00e3ab, $alpha: 0.2),
+            rgba($color: #8330ff, $alpha: 0.2)
+          );
+          &.active {
+            @include GradientBackground(
+              120deg,
+              rgba($color: #00e3ab, $alpha: 0.5),
+              rgba($color: #8330ff, $alpha: 0.5)
+            );
+          }
+        }
+        &:last-child {
+          border-radius: 0 4px 4px 0;
+          @include GradientBackground(
+            120deg,
+            rgba($color: #8330ff, $alpha: 0.2),
+            rgba($color: #00e3ab, $alpha: 0.2)
+          );
+          &.active {
+            @include GradientBackground(
+              120deg,
+              rgba($color: #8330ff, $alpha: 0.5),
+              rgba($color: #00e3ab, $alpha: 0.5)
+            );
+          }
+        }
+      }
+    }
+  }
+
+  .add-new-project-btn {
+    background-color: transparent;
+    border: 2px dashed #e2e2e2;
+    padding: 30px;
+    border-radius: var(--rd-sm);
+    cursor: pointer;
+    height: 100%;
+    p {
+      font-weight: 500;
+      color: var(--white-3);
     }
   }
 }
