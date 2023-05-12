@@ -81,15 +81,11 @@ header {
   }
   ul {
     position: static !important;
-    display: flex;
     background-color: transparent !important;
     backdrop-filter: none !important;
 
     a {
-      color: var(--white) !important;
-
       svg path {
-        fill: var(--white) !important;
       }
     }
   }

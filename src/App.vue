@@ -8,7 +8,7 @@
 
 <script setup>
 import TheHeader from "./components/layout/TheHeader.vue";
-import { onMounted, provide, ref, watch, watchEffect } from "vue";
+import { onMounted, provide, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 const isOnMobileDevice = ref(null);
@@ -33,7 +33,11 @@ if (route.name === "Login" || route.name === "Signup") {
   isHeaderAndFooterVisible.value = false;
 }
 watch(route, (newVal) => {
-  if (newVal.name === "Login" || newVal.name === "Signup") {
+  if (
+    newVal.name === "Login" ||
+    newVal.name === "Signup" ||
+    newVal.name === "Dashboard"
+  ) {
     isHeaderAndFooterVisible.value = false;
   } else {
     isHeaderAndFooterVisible.value = true;

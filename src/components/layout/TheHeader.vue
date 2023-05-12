@@ -15,13 +15,13 @@
 
       <ul class="navbar" v-if="!isOnMobileDevice || isNavbarOpen">
         <li class="navbar-item" v-for="item in menuItems">
-          <router-link :to="{ name: 'Login' }">
+          <router-link :to="item.link">
             <ArrowRight class="navbar-link-arrow-right" />
             {{ item.title }}
           </router-link>
         </li>
         <li class="navbar-item">
-          <router-link :to="{ name: 'Home' }">
+          <router-link :to="{ name: 'Login' }">
             <ArrowRight class="navbar-link-arrow-right" />
             <UserAccount />
           </router-link>
@@ -38,19 +38,19 @@ import { useRoute } from "vue-router";
 const menuItems = ref([
   {
     title: "About Us",
-    // link: { name: "Abouts" },
+    link: { name: "AboutUs" },
   },
   {
     title: "Contact Us",
-    // link: { name: "Contacts" },
+    link: { name: "ContactUs" },
   },
   {
     title: "FAQs",
-    // link: { name: "FAQ" },
+    link: { name: "FAQs" },
   },
   {
     title: "Careers",
-    // link: { name: "Careers" },
+    link: { name: "Careers" },
   },
 ]);
 

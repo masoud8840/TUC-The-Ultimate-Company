@@ -78,6 +78,7 @@ const router = useRouter();
 const { useLogin, error } = getLogin();
 const handleLogin = async () => {
   await useLogin(user.email, user.password);
-  if (error.value === null) router.replace("/");
+  if (error.value === null)
+    router.push({ name: "Dashboard", params: { tab: "overview" } });
 };
 </script>

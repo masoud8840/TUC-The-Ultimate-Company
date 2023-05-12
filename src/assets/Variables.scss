@@ -1,0 +1,36 @@
+// MIXINs
+@mixin GradientBackground($deg, $from, $to) {
+  background: linear-gradient($deg, $from, $to);
+}
+
+@mixin GradientText($deg, $from, $to) {
+  background: -webkit-linear-gradient($deg, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// globals
+:root {
+  --white: #fafafa;
+  --white-1: #e2e2e2;
+  --white-2: #d9d9d9;
+  --white-3: #a9a9a9;
+  --white-4: #565656;
+
+  --bg-white-1: #f1f1f1;
+  --bg-white-2: #e9e9e9;
+
+  --h1: 600 16px "Poppins";
+  --p-bold: 500 16px "Poppins";
+  --gred-from: #00a3ff;
+  --gred-to: #00c0cc;
+
+  --primary: #8330ff;
+  --secondary: #00e3ab;
+
+  --rd-sm: 4px;
+  --rd-rounded: 50px;
+  --rd-md: 7px;
+
+  --text: #333333;
+}

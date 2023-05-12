@@ -125,9 +125,9 @@
         display: inline-block;
         cursor: pointer;
         @include GradientBackground(
-          120deg,
-          rgba($color: #8330ff, $alpha: 0.3),
-          rgba($color: #00e3ab, $alpha: 0.3)
+                        120deg,
+                        rgba($color: #8330ff, $alpha: 0.3),
+                        rgba($color: #00e3ab, $alpha: 0.3)
         );
         border-radius: var(--rd-rounded);
         transition: all 0.8s;
@@ -135,9 +135,9 @@
         &.active-slide {
           width: 30px;
           @include GradientBackground(
-            120deg,
-            rgba($color: #8330ff, $alpha: 0.7),
-            rgba($color: #00e3ab, $alpha: 0.7)
+                          120deg,
+                          rgba($color: #8330ff, $alpha: 0.7),
+                          rgba($color: #00e3ab, $alpha: 0.7)
           );
         }
       }
@@ -149,9 +149,9 @@
       border-radius: var(--rd-sm);
       border: 0;
       @include GradientBackground(
-        120deg,
-        rgba($color: #8330ff, $alpha: 0.7),
-        rgba($color: #00e3ab, $alpha: 0.7)
+                      120deg,
+                      rgba($color: #8330ff, $alpha: 0.7),
+                      rgba($color: #00e3ab, $alpha: 0.7)
       );
       color: var(--white);
       letter-spacing: 1px;
@@ -232,9 +232,9 @@
 
           &:checked {
             @include GradientBackground(
-              120deg,
-              rgba($color: #8330ff, $alpha: 0.7),
-              rgba($color: #00e3ab, $alpha: 0.7)
+                            120deg,
+                            rgba($color: #8330ff, $alpha: 0.7),
+                            rgba($color: #00e3ab, $alpha: 0.7)
             );
             border: 0;
 
@@ -261,9 +261,9 @@
 
         &.checked:after {
           @include GradientBackground(
-            120deg,
-            rgba($color: #8330ff, $alpha: 0.7),
-            rgba($color: #00e3ab, $alpha: 0.7)
+                          120deg,
+                          rgba($color: #8330ff, $alpha: 0.7),
+                          rgba($color: #00e3ab, $alpha: 0.7)
           );
         }
       }
@@ -318,18 +318,25 @@
     }
 
     .contacts-form-page-3 {
+
       p {
         margin-bottom: 15px;
-        font-size: 18px;
+        font-size: 16px;
+        color: var(--white-3);
 
         span {
           text-transform: capitalize;
+          font-size: 16px;
           color: var(--text);
         }
       }
 
-      ul li p {
-        margin-bottom: 5px;
+      ul {
+        flex-direction: column;
+
+        li p {
+          margin-bottom: 5px;
+        }
       }
     }
 

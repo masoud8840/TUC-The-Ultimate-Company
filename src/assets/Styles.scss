@@ -1,39 +1,4 @@
-// MIXINs
-@mixin GradientBackground($deg, $from, $to) {
-  background: linear-gradient($deg, $from, $to);
-}
-
-@mixin GradientText($deg, $from, $to) {
-  background: -webkit-linear-gradient($deg, $from, $to);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// globals
-:root {
-  --white: #fafafa;
-  --white-1: #e2e2e2;
-  --white-2: #d9d9d9;
-  --white-3: #a9a9a9;
-  --white-4: #565656;
-
-  --bg-white-1: #f1f1f1;
-  --bg-white-2: #e9e9e9;
-
-  --h1: 600 16px "Poppins";
-  --p-bold: 500 16px "Poppins";
-  --gred-from: #00a3ff;
-  --gred-to: #00c0cc;
-
-  --primary: #8330ff;
-  --secondary: #00e3ab;
-
-  --rd-sm: 4px;
-  --rd-rounded: 50px;
-  --rd-md: 7px;
-
-  --text: #333333;
-}
+@import "Variables";
 * {
   margin: 0;
   padding: 0;
@@ -46,6 +11,7 @@
 body {
   background-color: var(--white);
 }
+
 .container {
   max-width: 1200px;
   position: relative;
@@ -56,6 +22,7 @@ body {
     padding: 0;
   }
 }
+
 a {
   text-decoration: none;
   color: var(--white);
@@ -67,25 +34,32 @@ a {
   padding-left: 55px;
   color: var(--text);
   font: var(--h1);
+
   &.light {
     color: var(--white);
+
     &::after {
       background-color: var(--white);
     }
   }
+
   &.light-1 {
     color: var(--white-2);
+
     &::after {
       background-color: var(--white-2);
     }
   }
+
   &.light-2 {
     color: var(--white-3);
     margin-bottom: 25px;
+
     &::after {
       background-color: var(--white-3);
     }
   }
+
   &:after {
     content: "";
     position: absolute;
@@ -127,7 +101,7 @@ a {
   }
 
   p {
-    color: var(--text-light);
+    color: var(--white-3);
     font-size: 14px;
     line-height: 21px;
     font-weight: 300;
@@ -199,11 +173,83 @@ input[type="radio"] {
     }
   }
 }
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: var(--rd-rounded);
+  pointer-events: none;
+  appearance: none;
+
+  &:checked {
+    @include GradientBackground(
+      120deg,
+      rgba($color: #8330ff, $alpha: 0.7),
+      rgba($color: #00e3ab, $alpha: 0.7)
+    );
+    border: 0;
+
+    &:after {
+      content: url("/images/ContactsView/Form/Check.svg");
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+  }
+
+  input[type="text"] {
+    padding-left: 55px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #e2e2e2;
+    font-size: 14px;
+    line-height: 21px;
+    outline: 0;
+
+    &::placeholder {
+      color: var(--white-3);
+      transition: padding 0.15s;
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 5px rgba(169, 169, 169, 0.7);
+
+      &::placeholder {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+.vl {
+  height: 60px;
+  width: 1px;
+  background-color: var(--light-white);
+  margin: 0 15px;
+}
+
 // Imports
-@import "./by\ routes/Home";
-@import "./by\ routes/Navbar";
-@import "./by\ routes/AboutUs";
-@import "./by\ routes/ContactUs";
-@import "./by\ routes/FAQs";
-@import "./by\ routes/Careers";
-@import "./by\ routes/Authentications";
+@import "by routes/Home";
+@import "by routes/Navbar";
+@import "by routes/AboutUs";
+@import "by routes/ContactUs";
+@import "by routes/FAQs";
+@import "by routes/Careers";
+@import "by routes/Authentications";
+@import "by routes/Dashboard";
