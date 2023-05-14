@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-
+import Dashboard from "../views/Dashboard.vue";
 const routes = [
   {
     path: "/",
@@ -41,7 +41,8 @@ const routes = [
     props: true,
     path: "/dashboard/:tab",
     name: "Dashboard",
-    component: () => import("../views/Dashboard.vue"),
+    // component: () => import("../views/Dashboard.vue"),
+    component: Dashboard,
   },
 ];
 

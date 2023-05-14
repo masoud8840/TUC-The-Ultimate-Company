@@ -370,8 +370,7 @@ h2.dashboard-title {
   flex-direction: column;
   gap: 30px;
   &.dashboard-projects-view {
-    background-color: red;
-    gap: 0;
+    gap: 30px;
   }
   a {
     display: flex;

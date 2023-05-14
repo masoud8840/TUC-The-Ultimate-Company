@@ -37,7 +37,10 @@ import AuthenticationIcon from "../components/icon/Dashboard/Authentication.vue"
 import MessagesIcon from "../components/icon/Dashboard/Messages.vue";
 import SettingsIcon from "../components/icon/Dashboard/Settings.vue";
 import LogoutIcon from "../components/icon/Dashboard/Logout.vue";
+import useSignout from "../composables/useLogout";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const props = defineProps(["tab"]);
 const isMobile = inject("isOnMobileDevice");
 
@@ -73,10 +76,11 @@ const navbarItems = shallowRef([
   },
 ]);
 
+const Logout = useSignout();
 const checkForLogout = async (logoutBtnIndex) => {
   if (logoutBtnIndex === 6) {
-    await userUtils.Logout();
-    router.push({ name: "Home" });
+    await Logout();
+    await router.push({ name: "Home" });
   }
 };
 const user = {

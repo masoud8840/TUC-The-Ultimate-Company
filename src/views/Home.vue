@@ -105,7 +105,7 @@
         <h2 class="section-title light-2">Our Team</h2>
         <div class="our-team-container">
           <router-link
-            :to="{ name: 'Home' }"
+            :to="{ name: 'AboutUs' }"
             class="team-member"
             v-for="member in ourTeam"
           >
