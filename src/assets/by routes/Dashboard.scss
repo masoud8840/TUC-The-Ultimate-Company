@@ -528,3 +528,245 @@ h2.dashboard-title {
     }
   }
 }
+
+.dashboard-settings-container {
+  display: grid;
+  align-items: start;
+  gap: 50px;
+  h3 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 39px;
+  }
+  .header-divider {
+    border: 1px solid var(--bg-white-2);
+    border-radius: 10px;
+    margin: 15px 0;
+  }
+  .settings-subsections {
+    display: grid;
+    gap: 30px;
+    .settings-subsection {
+      display: grid;
+      gap: 15px;
+
+      @media (width>1200px) {
+        grid-template-columns: 1fr 1.25fr;
+        align-items: start;
+      }
+      .settings_subsection-title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .settings_subsection-subtitle {
+        color: var(--white-3);
+      }
+
+      .profile-photo-placeholder {
+        width: 72px;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    .profile-photo-file-input {
+      position: relative;
+      border: 2px dashed var(--white-1);
+      border-radius: var(--rd-sm);
+
+      img,
+      p {
+        position: absolute;
+        top: 15px;
+        right: 50%;
+        transform: translateX(50%);
+        pointer-events: none;
+      }
+      p {
+        text-align: center;
+        top: initial;
+        bottom: 15px;
+        width: 100%;
+        padding: 0 30px;
+        color: var(--white-3);
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .settings-notifications {
+    .settings-subsection {
+      p {
+        color: var(--white-3);
+      }
+    }
+  }
+}
+
+input[type="text"],
+input[type="Email"],
+textarea,
+select {
+  width: 100%;
+  height: 45px;
+  border: 1px solid var(--white-2);
+  border-radius: var(--rd-sm);
+  // min-height: 40px;
+  padding: 0 10px;
+  outline: none;
+
+  &::placeholder {
+    transition: padding 0.15s;
+    color: var(--white-2);
+  }
+  &:focus {
+    box-shadow: inset 0 0 5px rgba(169, 169, 169, 0.7);
+
+    &::placeholder {
+      padding-left: 7px;
+    }
+  }
+}
+
+textarea {
+  padding: 15px;
+  min-height: 150px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  width: 100%;
+  min-height: 120px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+}
+.col-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+
+  @media (width>960px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+.row-2 {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+}
+.badge {
+  padding: 5px 15px;
+  border-radius: var(--rd-md);
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: capitalize;
+  &.badge-verified {
+    background-color: rgba($color: #00cc99, $alpha: 0.07);
+    color: rgba($color: #00cc99, $alpha: 0.75);
+  }
+  &.badge-disabled {
+    background-color: rgba($color: #ed4c5c, $alpha: 0.07);
+    color: rgba($color: #ed4c5c, $alpha: 0.75);
+  }
+  &.badge-gray {
+    background-color: rgba($color: #a9a9a9, $alpha: 0.07);
+    color: var(--white-3);
+  }
+}
+
+.add-email-address-btn {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  background-color: rgba($color: #a9a9a9, $alpha: 0.07);
+  color: var(--white-3);
+  border: 0;
+  gap: 7px;
+  &:hover {
+    background-color: rgba($color: #a9a9a9, $alpha: 0.15);
+  }
+}
+
+.settings-status {
+  padding: 5px 15px;
+  background-color: rgba($color: #a9a9a9, $alpha: 0.07);
+  color: var(--white-3);
+  & + button {
+    border: 1px solid var(--white-2);
+    background-color: transparent;
+    font-weight: 500;
+  }
+}
+
+button {
+  padding: 7px 15px;
+  cursor: pointer;
+  border-radius: var(--rd-md);
+}
+
+.settings-input {
+  position: relative;
+}
+
+// Switch.vue
+.switch-container {
+  position: relative;
+  height: 30px;
+  width: 75px;
+  margin-left: auto;
+  input[type="checkbox"] {
+    cursor: pointer;
+    height: 30px;
+    width: 75px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(169, 169, 169, 0.25);
+    border: 0;
+    overflow: hidden;
+    &:checked {
+      & + .switch-thumb {
+        left: 50px;
+      }
+      &::after {
+        left: 0;
+      }
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      @include GradientBackground(
+        120deg,
+        rgba($color: #8330ff, $alpha: 0.7),
+        rgba($color: #00e3ab, $alpha: 0.7)
+      );
+      border-radius: var(--rd-rounded);
+      left: -100%;
+
+      transition: left 0.25s;
+    }
+  }
+  .switch-thumb {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+    pointer-events: none;
+    background: #fafafa;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    transition: inset 0.25s;
+  }
+}

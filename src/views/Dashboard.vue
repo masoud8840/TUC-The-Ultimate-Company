@@ -22,6 +22,8 @@
     <Overview v-if="props.tab === 'overview'" />
     <TrackProgress v-if="props.tab === 'track-progress'" />
     <Projects :projects="user.projects" v-if="props.tab === 'projects'" />
+    <Settings v-if="props.tab === 'settings'" />
+    
   </section>
 </template>
 
@@ -29,6 +31,7 @@
 import Overview from "../components/UI/Dashboard/Overview.vue";
 import TrackProgress from "../components/UI/Dashboard/TrackProgress.vue";
 import Projects from "../components/UI/Dashboard/Projects.vue";
+import Settings from "../components/UI/Dashboard/Settings.vue";
 import { inject, shallowRef } from "vue";
 import OverviewIcon from "../components/icon/Dashboard/Overview.vue";
 import TrackProgressIcon from "../components/icon/Dashboard/TrackProgress.vue";

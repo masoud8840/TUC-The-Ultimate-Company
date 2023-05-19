@@ -20,7 +20,9 @@
         </button>
       </div>
     </div>
-    <section :class="`dashboard-projects-container dashboard-projects-view ${projectsOutputStyle}`">
+    <section
+      :class="`dashboard-projects-container dashboard-projects-view ${projectsOutputStyle}`"
+    >
       <article
         class="dashboard-project-item"
         v-for="proj in props.projects"
