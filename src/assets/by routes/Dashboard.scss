@@ -109,7 +109,7 @@ h2.dashboard-title {
 .card {
   border: 1px solid #e2e2e2;
   border-radius: var(--rd-sm);
-  padding: 15px 0;
+  padding: 15px;
 }
 .dashboard-overview {
   display: grid;
@@ -721,13 +721,13 @@ button {
 // Switch.vue
 .switch-container {
   position: relative;
-  height: 30px;
-  width: 75px;
+  height: 26px;
+  width: 60px;
   margin-left: auto;
   input[type="checkbox"] {
     cursor: pointer;
-    height: 30px;
-    width: 75px;
+    height: 26px;
+    width: 60px;
     position: absolute;
     top: 0;
     right: 0;
@@ -736,7 +736,7 @@ button {
     overflow: hidden;
     &:checked {
       & + .switch-thumb {
-        left: 50px;
+        left: 40px;
       }
       &::after {
         left: 0;
@@ -758,8 +758,8 @@ button {
     }
   }
   .switch-thumb {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     top: 5px;
     left: 5px;
     position: absolute;
@@ -768,5 +768,98 @@ button {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
     border-radius: 100px;
     transition: inset 0.25s;
+  }
+}
+
+.dashboard-track-progress-view {
+  display: grid;
+  gap: 30px;
+  align-items: start;
+  align-content: start;
+  .track-progress-header {
+    display: flex;
+    gap: 15px;
+    img {
+      max-width: 48px;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+    }
+    span {
+      color: var(--white-3);
+    }
+  }
+  .track_progress-deadlines {
+    h1 {
+      font-weight: 600;
+    }
+    display: grid;
+    gap: 15px;
+    .deadline-item {
+      display: grid;
+      gap: 5px;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h5 {
+          font-weight: 500;
+        }
+        span {
+          color: var(--white-3);
+          font-weight: 500;
+        }
+      }
+
+      progress {
+        width: 100%;
+      }
+    }
+  }
+
+  .track_progress-version_control {
+    border-left: 1px solid var(--white-2);
+    .group-title {
+      font-weight: 500;
+      margin: 0 0 30px 20px;
+      display: inline-block;
+      @include GradientText(120deg, var(--primary), var(--secondary));
+      position: relative;
+      &::after {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background-color: var(--white);
+        position: absolute;
+        top: 2px;
+        left: -27px;
+        transform: rotateZ(45deg);
+      }
+
+      &::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        @include GradientBackground(120deg, var(--primary), var(--secondary));
+        position: absolute;
+        top: 0;
+        left: -29px;
+        transform: rotateZ(45deg);
+      }
+    }
+    ul {
+      transform: translateX(-10px);
+      list-style-type: none;
+      li {
+        .version_control-container {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+      }
+    }
   }
 }

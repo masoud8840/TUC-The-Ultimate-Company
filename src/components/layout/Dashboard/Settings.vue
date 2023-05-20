@@ -362,5 +362,5 @@
 </template>
 
 <script setup>
-import Switch from "../Switch.vue";
+import Switch from "../../UI/Switch.vue";
 </script>
