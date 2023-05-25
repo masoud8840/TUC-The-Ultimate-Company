@@ -16,12 +16,12 @@
           class="progress-item"
           v-for="progress in projectSubProjectsProgress"
         >
-          <!-- <CircularProgress
+          <CircularProgress
             :key="progress"
             :percent="progress.percent"
             :title="progress.title"
             :status="progress.status"
-          /> -->
+          />
         </div>
       </section>
       <h1>Overall Progresses</h1>
@@ -52,7 +52,7 @@
         <h3 class="group-title">{{ category }}</h3>
         <ul>
           <li v-for="commit in commitsHistory" :key="commit">
-            <!-- <VersionHistory :commit="commit" /> -->
+            <VersionHistory :commit="commit" />
           </li>
         </ul>
       </div>
@@ -61,8 +61,8 @@
 </template>
 <script setup>
 import { ref } from "vue";
-// import VersionHistory from "../../UI/Dashboard/VersionHistory.vue";
-// import CircularProgress from "../../UI/Dashboard/CircularProgress.vue";
+import VersionHistory from "../../UI/Dashboard/VersionHistory.vue";
+import CircularProgress from "../../UI/Dashboard/CircularProgress.vue";
 const projectSubProjectsProgress = ref([
   {
     title: "Front End",
