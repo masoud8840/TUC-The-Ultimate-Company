@@ -12,7 +12,8 @@
     "@egjs/vue3-flicking": "^4.10.6",
     "firebase": "^9.19.1",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuejs-progress-bar": "^1.2.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
