@@ -23,6 +23,7 @@
     <TrackProgress v-if="props.tab === 'track-progress'" />
     <Projects :projects="user.projects" v-if="props.tab === 'projects'" />
     <Settings v-if="props.tab === 'settings'" />
+    <Authentication v-if="props.tab === 'authentication'" />
   </section>
 </template>
 
@@ -31,6 +32,7 @@ import Overview from "../components/layout/Dashboard/Overview.vue";
 import TrackProgress from "../components/layout/Dashboard/TrackProgress.vue";
 import Projects from "../components/layout/Dashboard/Projects.vue";
 import Settings from "../components/layout/Dashboard/Settings.vue";
+import Authentication from "../components/layout/Dashboard/Authentication.vue";
 import { inject, shallowRef } from "vue";
 import OverviewIcon from "../components/icon/Dashboard/Overview.vue";
 import TrackProgressIcon from "../components/icon/Dashboard/TrackProgress.vue";
@@ -63,6 +65,7 @@ const navbarItems = shallowRef([
   {
     title: "authentication",
     component: AuthenticationIcon,
+    link: "authentication#emailAddressVerification",
   },
   {
     title: "messages",
