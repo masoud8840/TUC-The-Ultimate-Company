@@ -12,7 +12,7 @@ header {
   &.stick-on-top {
     background: transparent url("/images/NavigationMenu/HeaderBackground.svg")
       center/cover no-repeat;
-    padding: 15px 0;
+    padding: 20px 0;
   }
   nav {
     position: relative;
@@ -27,9 +27,10 @@ header {
       border: 0;
     }
     .brand {
-      font: var(--brand-mobile);
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 33px;
       letter-spacing: 1px;
-      line-height: 36px;
       color: var(--white);
       text-decoration: none;
     }
@@ -77,7 +78,10 @@ header {
 }
 @media (min-width: 768px) {
   header {
-    padding: 25px 0;
+    padding: 20px 0;
+    &.stick-on-top {
+      padding: 0px 0;
+    }
   }
   .navigation ul {
     position: static !important;
@@ -90,5 +94,10 @@ header {
         fill: var(--white);
       }
     }
+  }
+
+  .brand {
+    font-size: 26px !important;
+    line-height: 39px;
   }
 }
