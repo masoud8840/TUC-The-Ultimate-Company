@@ -25,7 +25,7 @@
             v-for="contact in contactOptions"
           >
             <img
-              :src="`/public/images/ContactsView/${contact.title}.svg`"
+              :src="`/images/ContactsView/${contact.title}.svg`"
               :alt="`${contact.title}-icon`"
             />
             <div class="contacts-info-item-description">
@@ -38,7 +38,7 @@
         <div class="contacts-socials">
           <a :href="social.link" v-for="social in socialMedias">
             <img
-              :src="`/public/images/ContactsView/Socials/${social.title}.svg`"
+              :src="`/images/ContactsView/Socials/${social.title}.svg`"
               :alt="social.title"
             />
           </a>
@@ -69,7 +69,7 @@
                 v-model="userSelectedOptionsInForm"
               />
               <img
-                :src="`/public/images/ContactsView/Form/${
+                :src="`/images/ContactsView/Form/${
                   option.img || option.title
                 }.svg`"
                 :alt="option.title"

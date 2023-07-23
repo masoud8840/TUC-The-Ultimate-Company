@@ -1,10 +1,7 @@
 <template>
   <section class="dashboard-view-inner dashboard-track-progress-view">
     <section class="track-progress-header">
-      <img
-        src="/public/images/DashboardView/Microsoft Logo.svg"
-        alt="Company logo"
-      />
+      <img src="/images/DashboardView/MicrosoftLogo.svg" alt="Company logo" />
       <div>
         <h3>Microsoft</h3>
         <span>Ada Wong</span>

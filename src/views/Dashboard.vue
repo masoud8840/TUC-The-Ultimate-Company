@@ -91,13 +91,14 @@ const checkForLogout = async (logoutBtnIndex) => {
 const user = {
   projects: [
     {
-      name: "",
-      founder: "",
-      description: "",
+      name: "Microsoft",
+      founder: "Ada Wong",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat odit qui laborum voluptatibus labore fuga maxime doloribus architecto esse minima? Aliquam accusamus nobis vitae delectus omnis nesciunt tempore veritatis illum consectetur fugiat, reprehenderit eligendi dolor autem exercitationem beatae id, tempora officia porro. Facere, impedit incidunt ea aperiam autem aliquam nulla?",
       link: "",
-      logo: "",
-      startAt: "",
-      finishedOn: "",
+      logo: "/images/DashboardView/MicrosoftLogo.svg",
+      startAt: new Date(2021, 4, 4),
+      finishedOn: new Date(),
     },
   ],
 };
