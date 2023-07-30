@@ -1,7 +1,27 @@
-# Vue 3 + Vite
+# Welcome to TUC Startup
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Project setup
+```
+npm install
+```
 
-## Recommended IDE Setup
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Compiles and minifies for production
+```
+npm run build
+```
+
+
+### UI Mockup
+[Open link with figma](https://www.figma.com/file/PWFMjAmA8lCpVV7HfzOclM/The-Ultimate-Company?type=design&node-id=0%3A1&mode=design&t=Rvh6Gu6V79bSjJ6P-1)
+
+### Live Preview
+[tuc-team-manager.netlify.app](https://tuc-team-manager.netlify.app/)
+
+Design & Developed with <3
+
+
